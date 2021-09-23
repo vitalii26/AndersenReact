@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React-basic</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid black;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        justify-content: space-between;
+      }
+
+      .button {
+        background-color: green;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+    <script type="text/babel">
+      const Button = () => {
+        return (
+          <button className="button" type="submit">
+            Save
+          </button>
+        );
+      };
+      const Input = () => {
+        return (
+          <input
+            type="text"
+            style={{
+              border: "1px solid green",
+              borderRadius: "5px",
+              padding: "5px",
+            }}
+            placeholder="Your name"
+          />
+        );
+      };
+
+      const Label = () => {
+        return <label>Print your name</label>;
+      };
+
+      const Form = () => {
+        return (
+          <form className="form">
+            <Label />
+            <Input />
+            <Button />
+          </form>
+        );
+      };
+
+      const Container = () => {
+        return (
+          <div className="container">
+            <Form />
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Container />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

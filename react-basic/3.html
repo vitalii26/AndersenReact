@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React-basic</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+    <script type="text/babel">
+      const btnStyle = {
+        backgroundColor: "green",
+        padding: "10px",
+        border: "none",
+        borderRadius: "5px",
+      };
+
+      const formStyle = {
+        display: "flex",
+        flexDirection: "column",
+        height: "100px",
+        justifyContent: "space-between",
+      };
+
+      const divStyle = {
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        maxWidth: "500px",
+        margin: "20px auto",
+        padding: "20px",
+        border: "2px solid black",
+      };
+
+      const jsxElement = (
+        <div style={divStyle}>
+          <form style={formStyle}>
+            <label htmlFor="name">Print your name:</label>
+            <input
+              style={{
+                border: "1px solid green",
+                borderRadius: "5px",
+                padding: "5px",
+              }}
+              type="text"
+              id="name"
+              placeholder="Your name"
+            />
+            <button type="submit" style={btnStyle}>
+              Save
+            </button>
+          </form>
+        </div>
+      );
+
+      ReactDOM.render(jsxElement, document.getElementById("root"));
+    </script>
+  </body>
+</html>

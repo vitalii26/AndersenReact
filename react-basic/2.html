@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React-basic</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+    <script type="module">
+      const btnStyle = {
+        backgroundColor: "green",
+        padding: "10px",
+        border: "none",
+        borderRadius: "5px",
+      };
+
+      const formStyle = {
+        display: "flex",
+        flexDirection: "column",
+        height: "100px",
+        justifyContent: "space-between",
+      };
+
+      const divStyle = {
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        maxWidth: "500px",
+        margin: "20px auto",
+        padding: "20px",
+        border: "2px solid black",
+      };
+
+      const inputStyle = {
+        border: "1px solid green",
+        borderRadius: "5px",
+        padding: "5px",
+      };
+
+      const btnElement = React.createElement(
+        "button",
+        { style: btnStyle },
+        "Save"
+      );
+
+      const inputElement = React.createElement("input", {
+        id: "input",
+        placeholder: "Your name",
+        style: inputStyle,
+      });
+
+      const labelElement = React.createElement(
+        "label",
+        { htmlFor: "input" },
+        "Print your name:"
+      );
+
+      const formElement = React.createElement(
+        "form",
+        {
+          style: formStyle,
+        },
+        labelElement,
+        inputElement,
+        btnElement
+      );
+
+      const divElement = React.createElement(
+        "div",
+        {
+          style: divStyle,
+        },
+        formElement
+      );
+
+      ReactDOM.render(divElement, document.getElementById("root"));
+    </script>
+  </body>
+</html>

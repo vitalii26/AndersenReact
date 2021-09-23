@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React-basic</title>
+  </head>
+  <body>
+    <script type="module">
+      const divElement = document.createElement("div");
+      divElement.style.display = "flex";
+      divElement.style.justifyContent = "center";
+      divElement.style.width = "100%";
+      divElement.style.maxWidth = "500px";
+      divElement.style.margin = "20px auto";
+      divElement.style.padding = "20px";
+      divElement.style.border = "2px solid black";
+
+      const formElement = document.createElement("form");
+      formElement.style.display = "flex";
+      formElement.style.flexDirection = "column";
+      formElement.style.height = "100px";
+      formElement.style.justifyContent = "space-between";
+
+      const labelElement = document.createElement("label");
+      labelElement.setAttribute("for", "input");
+      labelElement.textContent = "Print your name:";
+
+      const inputElement = document.createElement("input");
+      inputElement.setAttribute("placeholder", "Your name");
+      inputElement.setAttribute("id", "input");
+      inputElement.style.border = "1px solid green";
+      inputElement.style.borderRadius = "5px";
+      inputElement.style.padding = "5px";
+
+      const btnElement = document.createElement("button");
+      btnElement.style.backgroundColor = "green";
+      btnElement.style.padding = "10px";
+      btnElement.style.border = "none";
+      btnElement.style.borderRadius = "5px";
+      btnElement.setAttribute("type", "submit");
+      btnElement.textContent = "Save";
+
+      document.querySelector("body").append(divElement);
+      divElement.append(formElement);
+      formElement.append(labelElement, inputElement, btnElement);
+    </script>
+  </body>
+</html>
